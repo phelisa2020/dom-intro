@@ -1,6 +1,8 @@
 var billStringElement = document.querySelector(".billString");
 var calculateBtn = document.querySelector('.calculateBtn');
 var billTotalElement = document.querySelector(".billTotal");
+var billTotalSpansElement = document.querySelector('.total:checked')
+ 
 function totalPhoneBill(billString){
     // get the string entered in the textArea
     //split the string
@@ -26,21 +28,43 @@ function calculateBtnClicked(){
 	  var billString= billStringElement.value
 	   var roundedBillTotal = totalPhoneBill(billString);
     billTotalElement.innerHTML = roundedBillTotal;
-     // styleTotal(roundedBillTotal);
+    // billTotalSpan.classList.remove('warning')
+    // billTotalSpan.classList.remove('danger')
+	
+ // const currentColors = document.querySelector('.total:checked ')
+   
+ //     billTotalSpan.classList.add(currentColor.value)
+ //    const currentColor = Number(roundedBillTotal);
+
+	// if(currentColor>= 30){
+	// 	billTotalSpan.classList.add('danger');
+	// }
+	// else if(currentColor >= 20 && currentTotal<30){
+	// 	billTotalSpan.classList.add('warning');
+	// }
 }
+
+
+     // styleTotal(roundedBillTotal);
+
 calculateBtn.addEventListener('click', calculateBtnClicked);
 
-// function totalColor (roundedBillTotal){
-// 	billTotalSpan.classList.remove('danger')
-// 	billTotalSpan.classList.remove('warning')
+function totalColor(roundedBillTotal){
+		
+	var billTotalSpansElement = document.querySelector('.total')
+const currentTotal = Number(roundedBillTotal);
 
-// 	const currentTotal = Number(roundedBillTotal);
-// 	if(currentTotal >= 30){
-// 		billTotalSpan.classList.add('danger');
-// 	}
-// 	else if(currentTotal >= 20 && currentTotal<30){
-// 		billTotalSpan.classList.add('warning');
-// 	}
-// }
-// totalColor.addEventListener('click',calculateBtn)
+	 	billTotalSpansElement.classList.remove('warning')
+billTotalSpansElement.classList.remove('danger')
+// const billTotalSpan = document.querySelector('.billTotal')
+ 
+ 	if(currentTotal >= 30){
+ 		billTotalSpansElement.classList.add('danger');
+ 	}
+ 	else if(currentTotal >= 20 && currentTotal<30){
+ 		billTotalSpansElement.classList.add('warning');
+ 	}
+ }
+ 
+calculateBtn.addEventListener('click', totalColor);
 
