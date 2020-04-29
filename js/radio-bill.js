@@ -4,17 +4,16 @@ var radioBillAddBtnElement = document.querySelector('.radioBillAddBtn');
 var callTotalTwoElement	= document.querySelector('.callTotalTwo');
 var smsTotalTwoElement	= document.querySelector('.smsTotalTwo')
 var totalTwoElement = document.querySelector('.totalTwo')
-var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
 
 //get a reference to the add button
 function radioBillTotal (){
-
-var billItemType = billItemTypeRadioElement.value.trim();
+var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
+var billItemType = checkedRadioBtn.value.trim()
 if (billItemType === 'call'){
 	callsTotal += 2.75
 }
     else if (billItemType === "sms"){
-        smsTotal += 0.75
+        smsTotal += 0.75;
     }
 
     
