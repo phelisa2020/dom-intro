@@ -3,7 +3,8 @@ var addToBillBtnElement = document.querySelector('.addToBillBtn');
 var callsTotalElement = document.querySelector('.callTotalOne');  
 var smsTotalElement = document.querySelector('.smsTotalOne');    
 var totalOneElement = document.querySelector('.totalOne');
-
+var callsTotal = 0;
+var smsTotal = 0;
 
  function textBillTotal(){
    
@@ -31,6 +32,5 @@ var totalOneElement = document.querySelector('.totalOne');
         totalOneElement.classList.add("warning");
     }
 }
- var callsTotal = 0;
-    var smsTotal = 0;
+ 
 addToBillBtnElement.addEventListener('click', textBillTotal);

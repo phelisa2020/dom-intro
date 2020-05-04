@@ -4,23 +4,23 @@ var radioBillAddBtnElement = document.querySelector('.radioBillAddBtn');
 var callTotalTwoElement	= document.querySelector('.callTotalTwo');
 var smsTotalTwoElement	= document.querySelector('.smsTotalTwo')
 var totalTwoElement = document.querySelector('.totalTwo')
-var callsTotal = 0;
-var smsTotal = 0;
+var callsTotal2 = 0;
+var smsTotal2 = 0;
 //get a reference to the add button
 function radioBillTotal (){
 var checkedRadioBtn = document.querySelector("input[name='billItemType']:checked");
 var billItemType = checkedRadioBtn.value.trim()
 if (billItemType === 'call'){
-	callsTotal += 2.75
+	callsTotal2 += 2.75
 }
     else if (billItemType === "sms"){
-        smsTotal += 0.75;
+        smsTotal2 += 0.75;
     }
 
     
-    callTotalTwoElement.innerHTML= callsTotal.toFixed(2);
-    smsTotalTwoElement.innerHTML= smsTotal.toFixed(2);
-    var totalCost = callsTotal +  smsTotal;
+    callTotalTwoElement.innerHTML= callsTotal2.toFixed(2);
+    smsTotalTwoElement.innerHTML= smsTotal2.toFixed(2);
+    var totalCost = callsTotal2 +  smsTotal2;
     totalTwoElement.innerHTML = totalCost.toFixed(2);
 
     if(totalCost >= 50){

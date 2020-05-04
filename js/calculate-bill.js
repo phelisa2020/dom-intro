@@ -1,14 +1,15 @@
 var billStringElement = document.querySelector(".billString");
-var calculateBtn = document.querySelector('.calculateBtn');
+var calculateBtnElement = document.querySelector('.calculateBtn');
 var billTotalElement = document.querySelector(".billTotal");
 var billTotalSpansElement = document.querySelector('.total:checked')
+
  
 function totalPhoneBill(billString){
     // get the string entered in the textArea
     //split the string
+    var billTotal = 0
     var billItems = billString.split(",");
     // a variable for the total phone bill.
-    var billTotal = 0;
     //loop over all the bill items
     for (var i=0;i<billItems.length;i++){
         var billItem = billItems[i].trim();
@@ -46,7 +47,7 @@ billTotalSpansElement.classList.remove('danger')
   
     
 }
-calculateBtn.addEventListener('click', calculateBtnClicked);
+calculateBtnElement.addEventListener('click', calculateBtnClicked);
 
 // function totalColor(roundedBillTotal){
 		
