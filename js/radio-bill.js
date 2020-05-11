@@ -1,5 +1,5 @@
 // get a reference to the sms or call radio buttons
-var billItemTypeRadioElement = document.querySelector('.billItemTypeRadio');	
+// var billItemTypeRadioElement = document.querySelector('.billItemTypeRadio');	
 var radioBillAddBtnElement = document.querySelector('.radioBillAddBtn');
 var callTotalTwoElement	= document.querySelector('.callTotalTwo');
 var smsTotalTwoElement	= document.querySelector('.smsTotalTwo')
