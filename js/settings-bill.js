@@ -42,8 +42,8 @@ if (billItemTypeRadio === 'call'){
     }
 
     
-    callTotalSettingsElement.innerHTML= callsTotal2.toFixed(2);
-    smsTotalSettingsElement.innerHTML= smsTotal2.toFixed(2);
+    callTotalSettingsElement.innerHTML= callTotal.toFixed(2);
+    smsTotalSettingsElement.innerHTML= smsTotal.toFixed(2);
     var totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
 
