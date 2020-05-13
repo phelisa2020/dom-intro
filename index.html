@@ -186,11 +186,13 @@
             <div class="six columns">
               <h5>Bill type</h5>
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value="call">
                 <span class="label-body">Call</span>
               </label>
+
+
               <label class="">
-                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings">
+                <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value="sms">
                 <span class="label-body" >SMS</span>
               </label>
               <button class="button-primary radioBillAddBtnTwo" type="button" name="button">Add</button>
@@ -199,15 +201,15 @@
                   <table>
                     <tr>
                       <td>Call total</td>
-                      <td>R<span class="callTotalSettings">34.00</span> </td>
+                      <td>R<span class="callTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
                       <td>SMS total</td>
-                      <td>R<span class="smsTotalSettings">7.35</span> </td>
+                      <td>R<span class="smsTotalSettings">0.00</span> </td>
                     </tr>
                     <tr>
                       <td>Total</td>
-                      <td> R<span class="totalSettings">41.35</span> </td>
+                      <td> R<span class="totalSettings">0.00</span> </td>
                     </tr>
                   </table>
 
@@ -221,8 +223,10 @@
               <label for="">Warning level</label>
               <input class="u-full-width warningLevelSetting " type="number" placeholder="eg. 30.00" class="warningLevel" >
               <label for="">Critical level</label>
-              <input class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" >
+              <input class="u-full-width criticalLevelSetting" type="number" name="" value="" placeholder="eg. 65.00" >
               <button class="button-primary updateSettings" type="button" name="button">Update settings</button>
+
+             
 
             </div>
           </div>

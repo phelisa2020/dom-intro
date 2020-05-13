@@ -51,5 +51,12 @@ if (billItemTypeRadio === 'call'){
     var totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
 
+    if (totalCost4 >= critical){
+	totalSettingsElement.className = 'danger'
+}
+	else if (totalCost4 >= warning){
+	totalSettingsElement.className = 'warning'
+}
+
 }
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
