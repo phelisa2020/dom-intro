@@ -8,7 +8,7 @@ var warningLevelSettingElement = document.querySelector('.warningLevelSetting');
 var criticalLevelSettingElement = document.querySelector('.criticalLevelSetting');
 var updateSettingElement = document.querySelector('.updateSettings');
 
-var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo');
+var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo')
 var callTotalSettingsElement = document.querySelector('.callTotalSettings');
 var smsTotalSettingsElement = document.querySelector('.smsTotalSettings');
 var totalSettingsElement = document.querySelector('.totalSettings');
@@ -29,6 +29,7 @@ function updateSettingBtnClicked (){
 	  callCost = Number(callCostSettingElement.value) 
       smsCost = Number(smsCostSettingElement.value)
       warning = Number(warningLevelSettingElement.value) 
+
      critical = Number(criticalLevelSettingElement.value)
 changeTotalColor= Number(totalSettings, warning, critical);
 }
@@ -51,12 +52,15 @@ if (billItemTypeRadio === 'call'){
     var totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
 
-     if (totalCost4 >= critical ){
+     if (totalCost4 >= critical){
  	totalSettingsElement.className = 'danger'
+ 	var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo').disabled = true
+
  }
+
  	else if (totalCost4 >= warning){
  	totalSettingsElement.className = 'warning'
  }
-
+ 
 }
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
