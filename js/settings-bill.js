@@ -52,15 +52,20 @@ if (billItemTypeRadio === 'call'){
     var totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
 
-     if (totalCost4 >= critical){
+// totalSettingsElement.className.remove('danger')
+// totalSettingsElement.className.remove('warning')
+
+ if (totalCost4 >= critical){
  	totalSettingsElement.className = 'danger'
  	var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo').disabled = true
+ }   
 
- }
-
- 	else if (totalCost4 >= warning){
+ else if (totalCost4 >= warning){
  	totalSettingsElement.className = 'warning'
  }
  
+
+ 
 }
+
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
