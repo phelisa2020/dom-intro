@@ -51,6 +51,7 @@ var billItemTypeRadio = checkedRadioBtn.value.trim()
     smsTotalSettingsElement.innerHTML= smsTotal.toFixed(2);
     totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
+function changeTotalColor(){
 
  totalSettingsElement.classList.remove('danger')
  totalSettingsElement.classList.remove('warning')
@@ -64,5 +65,8 @@ var billItemTypeRadio = checkedRadioBtn.value.trim()
  	totalSettingsElement.classList.add('warning')
  }
  }
+}
+
+radioBillAddBtnTwoElement.addEventListener('click', changeTotalColor)
 }
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
