@@ -1,4 +1,4 @@
-var checkedRadioBtn2 = document.querySelector("input[name='billItemTypeWithSettings']:checked");
+// var checkedRadioBtn2 = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
 //get a reference to the add button
 
@@ -22,6 +22,7 @@ var warning = 0.00;
 var critical = 0.00;
 var totalSettings = 0.00
 var changeTotalColor = 0.00
+var totalCost4 = 0.00
 
 
 function updateSettingBtnClicked (){
@@ -29,43 +30,39 @@ function updateSettingBtnClicked (){
 	  callCost = Number(callCostSettingElement.value) 
       smsCost = Number(smsCostSettingElement.value)
       warning = Number(warningLevelSettingElement.value) 
-
      critical = Number(criticalLevelSettingElement.value)
 changeTotalColor= Number(totalSettings, warning, critical);
 }
 updateSettingElement.addEventListener('click',updateSettingBtnClicked)
 
 function radioBillSetTotal (){
-
+	 if(totalCost4 < critical){
+ 
 var checkedRadioBtn = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 var billItemTypeRadio = checkedRadioBtn.value.trim()
-if (billItemTypeRadio === 'call'){
+ if (billItemTypeRadio === 'call'){
 	callTotal += callCost
 }
     else if (billItemTypeRadio === "sms"){
         smsTotal += smsCost
     }
-
     
     callTotalSettingsElement.innerHTML= callTotal.toFixed(2);
     smsTotalSettingsElement.innerHTML= smsTotal.toFixed(2);
-    var totalCost4 = callTotal +  smsTotal;
+    totalCost4 = callTotal +  smsTotal;
     totalSettingsElement.innerHTML = totalCost4.toFixed(2);
 
-// totalSettingsElement.className.remove('danger')
-// totalSettingsElement.className.remove('warning')
+ totalSettingsElement.classList.remove('danger')
+ totalSettingsElement.classList.remove('warning')
 
  if (totalCost4 >= critical){
- 	totalSettingsElement.className = 'danger'
- 	var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo').disabled = true
+ 	totalSettingsElement.classList.add('danger')
+ 	// var radioBillAddBtnTwoElement = document.querySelector('.radioBillAddBtnTwo').disabled = true
  }   
 
  else if (totalCost4 >= warning){
- 	totalSettingsElement.className = 'warning'
+ 	totalSettingsElement.classList.add('warning')
  }
- 
-
- 
+ }
 }
-
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
