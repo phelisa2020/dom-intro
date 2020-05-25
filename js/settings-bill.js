@@ -1,3 +1,4 @@
+
 var callCostSettingElement = document.querySelector('.callCostSetting');
 var smsCostSettingElement = document.querySelector('.smsCostSetting');
 var warningLevelSettingElement = document.querySelector('.warningLevelSetting');
@@ -27,7 +28,7 @@ function updateSettingBtnClicked (){
       smsCost = Number(smsCostSettingElement.value)
       warning = Number(warningLevelSettingElement.value) 
      critical = Number(criticalLevelSettingElement.value)
-changeTotalColor();
+changeTotalColor2();
 }
 
 
@@ -46,12 +47,13 @@ var billItemTypeRadio = checkedRadioBtn.value.trim()
     }
     callTotalSettingsElement.innerHTML= callTotal.toFixed(2);
     smsTotalSettingsElement.innerHTML= smsTotal.toFixed(2);
-    changeTotalColor()
+   
     totalCost4 = callTotal +  smsTotal;
   totalSettingsElement.innerHTML = totalCost4.toFixed(2)
+   changeTotalColor2()
 }
 
-function changeTotalColor(){
+function changeTotalColor2(){
  totalSettingsElement.classList.remove('danger')
  totalSettingsElement.classList.remove('warning')
  if (totalCost4 >= critical){
@@ -65,3 +67,4 @@ function changeTotalColor(){
 
 updateSettingElement.addEventListener('click',updateSettingBtnClicked)
 radioBillAddBtnTwoElement.addEventListener('click', radioBillSetTotal)
+
